@@ -1,7 +1,7 @@
 package tws.entity;
 
 public class ParkingBoy {
-    private int parkingBoyID;
+    private int employeeID;
     private String parkingBoyName;
     private int age;
 
@@ -9,17 +9,17 @@ public class ParkingBoy {
     }
 
     public ParkingBoy(int parkingBoyID, String parkingBoyName, int age) {
-        this.parkingBoyID = parkingBoyID;
+        this.employeeID = parkingBoyID;
         this.parkingBoyName = parkingBoyName;
         this.age = age;
     }
 
-    public int getParkingBoyID() {
-        return parkingBoyID;
+    public int getEmployeeID() {
+        return employeeID;
     }
 
-    public void setParkingBoyID(int parkingBoyID) {
-        this.parkingBoyID = parkingBoyID;
+    public void setEmployeeID(int employeeID) {
+        this.employeeID = employeeID;
     }
 
     public String getParkingBoyName() {
@@ -41,7 +41,7 @@ public class ParkingBoy {
     @Override
     public String toString() {
         return "ParkingBoy{" +
-                "parkingBoyID=" + parkingBoyID +
+                "employeeID=" + employeeID +
                 ", parkingBoyName='" + parkingBoyName + '\'' +
                 ", age=" + age +
                 '}';
