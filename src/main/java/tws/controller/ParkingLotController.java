@@ -20,8 +20,9 @@ public class ParkingLotController {
         parkingLotMapper.insertParkingLot(parkingLot);
         return ResponseEntity.created( URI.create("/parking-lot"+parkingLot.getParkingLotID())).build();
     }
-//    @GetMapping
-//    public RequestEntity<List<ParkingLot>> selectParkingLots(){
-//
-//    }
+    @GetMapping
+    public ResponseEntity<List<ParkingLot>> selectParkingLots(){
+        List<ParkingLot> parkingLots = parkingLotMapper.selectAllParkingLots();
+        return ResponseEntity.ok(parkingLots);
+    }
 }

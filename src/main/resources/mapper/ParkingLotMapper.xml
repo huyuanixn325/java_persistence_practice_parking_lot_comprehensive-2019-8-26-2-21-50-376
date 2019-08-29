@@ -6,4 +6,8 @@
         insert into `parking_lot` (`parkingLotID`,`capatity`,`availablePositionCount`,`employeeID`)
         values (#{parkingLot.parkingLotID},#{parkingLot.capatity},#{parkingLot.availablePositionCount},#{parkingLot.employeeID})
     </insert>
+
+    <select id="selectAllParkingLots" resultType="tws.entity.ParkingLot">
+        select * from `parking_lot`
+    </select>
 </mapper>
