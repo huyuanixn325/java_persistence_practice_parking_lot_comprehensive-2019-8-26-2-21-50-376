@@ -3,8 +3,8 @@
 <mapper namespace="tws.repository.ParkingLotMapper">
 
     <insert id="insertParkingLot">
-        insert into `parking_lot` (`parkingLotID`,`capatity`,`availablePositionCount`,`employeeID`)
-        values (#{parkingLot.parkingLotID},#{parkingLot.capatity},#{parkingLot.availablePositionCount},#{parkingLot.employeeID})
+        insert into `parking_lot` (`parkingLotID`,`capacity`,`availablePositionCount`,`employeeID`)
+        values (#{parkingLot.parkingLotID},#{parkingLot.capacity},#{parkingLot.availablePositionCount},#{parkingLot.employeeID})
     </insert>
 
     <select id="selectAllParkingLots" resultType="tws.entity.ParkingLot">

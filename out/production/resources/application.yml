@@ -10,6 +10,7 @@ logging:
 spring:
   datasource:
     url:  jdbc:h2:mem:tws_persistence_db
+
   h2:
     console:
       enabled: true

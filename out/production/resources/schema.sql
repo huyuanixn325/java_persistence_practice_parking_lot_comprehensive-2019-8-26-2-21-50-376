@@ -6,7 +6,7 @@ CREATE TABLE  parking_boy (
 
 CREATE TABLE parking_lot(
 parkingLotID int not null primary key ,
-capatity int not null,
+capacity int not null,
 availablePositionCount int not null,
 employeeID int not null
 );

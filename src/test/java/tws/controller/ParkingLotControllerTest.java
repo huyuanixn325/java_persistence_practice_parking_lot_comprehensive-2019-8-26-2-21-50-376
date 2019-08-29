@@ -24,7 +24,7 @@ public class ParkingLotControllerTest {
 
     @Test
     public void should_return_isCreated_when_given_a_post_request_parkingboylots() throws Exception {
-        mockMvc.perform(post("/parking-lots").contentType(MediaType.APPLICATION_JSON_UTF8_VALUE).content("{\"parkingLotID\":2,\"capatity\":1,\"availablePositionCount\":1,\"employeeID\":1}"))
+        mockMvc.perform(post("/parking-lots").contentType(MediaType.APPLICATION_JSON_UTF8_VALUE).content("{\"parkingLotID\":2,\"capacity\":1,\"availablePositionCount\":1,\"employeeID\":1}"))
                 .andDo(print())
                 .andExpect(status().isCreated());
     }

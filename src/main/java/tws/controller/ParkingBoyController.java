@@ -3,6 +3,7 @@ package tws.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import tws.entity.Employee;
 import tws.entity.ParkingBoy;
 import tws.repository.ParkingBoyMapper;
 
@@ -25,5 +26,12 @@ public class ParkingBoyController {
     public ResponseEntity<List<ParkingBoy>> selectAllParkingBoy(){
        List<ParkingBoy> parkingBoys =  parkingBoyMapper.selectAllParkingBoys();
        return ResponseEntity.ok(parkingBoys);
+    }
+
+    @GetMapping("/employees")
+    public ResponseEntity<List<Employee>> getAllEmployees(){
+        List<Employee> employees = parkingBoyMapper.selectAllEmployees();
+        System.out.println(employees.toString());
+        return ResponseEntity.ok(employees);
     }
 }

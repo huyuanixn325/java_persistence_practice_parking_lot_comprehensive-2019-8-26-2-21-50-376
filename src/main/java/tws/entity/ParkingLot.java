@@ -2,16 +2,16 @@ package tws.entity;
 
 public class ParkingLot {
     private int parkingLotID;
-    private int capatity;
+    private int capacity;
     private int availablePositionCount;
     private int employeeID;
 
     public ParkingLot() {
     }
 
-    public ParkingLot(int parkingLotID, int capatity, int availablePositionCount, int employeeID) {
+    public ParkingLot(int parkingLotID, int capacity, int availablePositionCount, int employeeID) {
         this.parkingLotID = parkingLotID;
-        this.capatity = capatity;
+        this.capacity = capacity;
         this.availablePositionCount = availablePositionCount;
         this.employeeID = employeeID;
     }
@@ -24,12 +24,12 @@ public class ParkingLot {
         this.parkingLotID = parkingLotID;
     }
 
-    public int getCapatity() {
-        return capatity;
+    public int getCapacity() {
+        return capacity;
     }
 
-    public void setCapatity(int capatity) {
-        this.capatity = capatity;
+    public void setCapacity(int capacity) {
+        this.capacity = capacity;
     }
 
     public int getAvailablePositionCount() {
