@@ -7,6 +7,7 @@ import tws.entity.ParkingBoy;
 import tws.repository.ParkingBoyMapper;
 
 import java.net.URI;
+import java.util.List;
 
 @RestController
 @RequestMapping("/parking-boys")
@@ -18,5 +19,11 @@ public class ParkingBoyController {
     public ResponseEntity<ParkingBoy> addParkingBoy(@RequestBody ParkingBoy parkingBoy){
         parkingBoyMapper.insertParkingBoy(parkingBoy);
         return ResponseEntity.created(URI.create("/parking-boys/"+parkingBoy.getEmployeeID())).build();
+    }
+
+    @GetMapping
+    public ResponseEntity<List<ParkingBoy>> selectAllParkingBoy(){
+       List<ParkingBoy> parkingBoys =  parkingBoyMapper.selectAllParkingBoys();
+       return ResponseEntity.ok(parkingBoys);
     }
 }

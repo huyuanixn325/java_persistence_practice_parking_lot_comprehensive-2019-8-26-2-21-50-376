@@ -5,5 +5,7 @@
     <insert id="insertParkingBoy">
         insert  into `parking_boy` (`employeeID`,`parkingBoyName`,`age`) values (#{parkingBoy.employeeID},#{parkingBoy.parkingBoyName},#{parkingBoy.age})
     </insert>
-
+    <select id="selectAllParkingBoys" resultType="tws.entity.ParkingBoy">
+        select * from `parking_boy`
+    </select>
 </mapper>
