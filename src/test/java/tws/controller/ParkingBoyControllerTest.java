@@ -36,6 +36,6 @@ public class ParkingBoyControllerTest {
         mockMvc.perform(get("/parking-boys"))
                 .andDo(print())
                 .andExpect(status().isOk())
-                .andExpect(content().string("[{\"employeeID\":1,\"parkingBoyName\":\"刘银萍\",\"age\":18}]"));
+                .andExpect(content().string("[]"));
     }
 }
