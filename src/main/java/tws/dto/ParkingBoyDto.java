@@ -1,22 +1,24 @@
-package tws.entity;
+package tws.dto;
+
+import tws.entity.ParkingLot;
 
 import java.io.Serializable;
 import java.util.List;
 
-public class Employee implements Serializable {
+public class ParkingBoyDto {
     private int employeeID;
     private String parkingBoyName;
     private int age;
     private List<ParkingLot> parkingLotList;
 
-    public Employee(int employeeID, String parkingBoyName, int age, List<ParkingLot> parkingLotList) {
+    public ParkingBoyDto() {
+    }
+
+    public ParkingBoyDto(int employeeID, String parkingBoyName, int age, List<ParkingLot> parkingLotList) {
         this.employeeID = employeeID;
         this.parkingBoyName = parkingBoyName;
         this.age = age;
         this.parkingLotList = parkingLotList;
-    }
-
-    public Employee() {
     }
 
     public int getEmployeeID() {

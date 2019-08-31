@@ -28,7 +28,7 @@ public class ParkingBoyController {
        return ResponseEntity.ok(parkingBoys);
     }
 
-    @GetMapping("/employees")
+    @GetMapping("/parking-boys-dto")
     public ResponseEntity<List<Employee>> getAllEmployees(){
         List<Employee> employees = parkingBoyMapper.selectAllEmployees();
         System.out.println(employees.toString());

@@ -1,0 +1,32 @@
+Method:POST
+URL:/parking-boys
+request body:{"employeeID":12,"parkingBoyName":"迷失的娜娜","age":18}
+response body:{"/parking-boys/12"}
+response code:201,500
+
+
+Method:GET
+URL:/parking-boys
+request body:{}
+response body:[{"employeeID":12,"parkingBoyName":"迷失的娜娜","age":18},{"employeeID":13,"parkingBoyName":"迷失的洋洋","age":18}]
+response code:200,500
+
+
+Method:GET
+URL:/parking-boys/parking-boys-dto
+request body:{}
+response body:[{"employeeID":12,"parkingBoyName":"迷失的娜娜","age":18,"parkingLots":[{"parkingLotID":1,"capacity":2,"availablePositionCount":1,"employeeID":12},{"parkingLotID":2,"capacity":3,"availablePositionCount":1,"employeeID":12}]},{"employeeID":13,"parkingBoyName":"迷失的洋洋","age":18"parkingLots":[]}]
+response code:200,500
+
+
+Method:POST
+URL:/parking-lots
+request body:{"parkingLotID":2,"capacity":3,"availablePositionCount":1,"employeeID":12}
+response body:{"/parking-lots/2"}
+response code:201,500
+
+Method:GET
+URL:/parking-lots
+request body:{}
+response body:[{"parkingLotID":1,"capacity":3,"availablePositionCount":1,"employeeID":12},{"parkingLotID":2,"capacity":3,"availablePositionCount":1,"employeeID":13}]
+response code:200,500
