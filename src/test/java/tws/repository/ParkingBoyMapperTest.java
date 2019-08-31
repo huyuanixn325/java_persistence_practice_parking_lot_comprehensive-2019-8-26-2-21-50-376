@@ -7,6 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.jdbc.JdbcTestUtils;
+import tws.dto.ParkingBoyDto;
 import tws.entity.ParkingBoy;
 
 import java.util.List;
@@ -42,4 +43,14 @@ public class ParkingBoyMapperTest {
         assertEquals(1,parkingBoyList.size());
     }
 
+    @Test
+    public void selectAllParkingDtos(){
+        //given
+        jdbcTemplate.execute("insert  into `parking_boy` (`employeeID`,`parkingBoyName`,`age`) values(2,'lunan',18)");
+        jdbcTemplate.execute("insert into `parking_lot` (`parkingLotID`,`capacity`,`availablePositionCount`,`employeeID`) values(6,1,1,2)");
+        //when
+        List<ParkingBoyDto> parkingBoyDtos = parkingBoyMapper.selectAllParkingDtos();
+        //then
+        assertEquals(1,parkingBoyDtos.size());
+    }
 }
