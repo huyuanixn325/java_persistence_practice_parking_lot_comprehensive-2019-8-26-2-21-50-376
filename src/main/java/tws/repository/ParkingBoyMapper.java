@@ -2,7 +2,7 @@ package tws.repository;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
-import tws.entity.Employee;
+import tws.dto.ParkingBoyDto;
 import tws.entity.ParkingBoy;
 
 import java.util.List;
@@ -13,5 +13,5 @@ public interface ParkingBoyMapper {
     void insertParkingBoy(@Param("parkingBoy") ParkingBoy parkingBoy);
     List<ParkingBoy> selectAllParkingBoys();
 
-    List<Employee> selectAllEmployees();
+    List<ParkingBoyDto> selectAllParkingDtos();
 }

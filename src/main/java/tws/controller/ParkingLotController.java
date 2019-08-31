@@ -6,6 +6,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tws.entity.ParkingLot;
 import tws.repository.ParkingLotMapper;
+import tws.service.ParkingLotService;
 
 import java.net.URI;
 import java.util.List;
@@ -14,15 +15,15 @@ import java.util.List;
 @RequestMapping("/parking-lots")
 public class ParkingLotController {
     @Autowired
-    ParkingLotMapper parkingLotMapper;
+    ParkingLotService parkingLotService;
     @PostMapping
     public ResponseEntity<ParkingLot> insertParkingLot(@RequestBody ParkingLot parkingLot){
-        parkingLotMapper.insertParkingLot(parkingLot);
+        parkingLotService.insertParkingLot(parkingLot);
         return ResponseEntity.created( URI.create("/parking-lot"+parkingLot.getParkingLotID())).build();
     }
     @GetMapping
     public ResponseEntity<List<ParkingLot>> selectParkingLots(){
-        List<ParkingLot> parkingLots = parkingLotMapper.selectAllParkingLots();
+        List<ParkingLot> parkingLots = parkingLotService.selectParkingLots();
         return ResponseEntity.ok(parkingLots);
     }
 }

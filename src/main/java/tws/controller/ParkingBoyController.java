@@ -3,9 +3,10 @@ package tws.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import tws.entity.Employee;
+import tws.dto.ParkingBoyDto;
 import tws.entity.ParkingBoy;
 import tws.repository.ParkingBoyMapper;
+import tws.service.ParkingBoyService;
 
 import java.net.URI;
 import java.util.List;
@@ -13,25 +14,25 @@ import java.util.List;
 @RestController
 @RequestMapping("/parking-boys")
 public class ParkingBoyController {
+
     @Autowired
-    ParkingBoyMapper parkingBoyMapper;
+    ParkingBoyService parkingBoyService;
     //AC1
     @PostMapping
     public ResponseEntity<ParkingBoy> addParkingBoy(@RequestBody ParkingBoy parkingBoy){
-        parkingBoyMapper.insertParkingBoy(parkingBoy);
+        parkingBoyService.addParkingBoy(parkingBoy);
         return ResponseEntity.created(URI.create("/parking-boys/"+parkingBoy.getEmployeeID())).build();
     }
 
     @GetMapping
     public ResponseEntity<List<ParkingBoy>> selectAllParkingBoy(){
-       List<ParkingBoy> parkingBoys =  parkingBoyMapper.selectAllParkingBoys();
+       List<ParkingBoy> parkingBoys =  parkingBoyService.selectAllParkingBoy();
        return ResponseEntity.ok(parkingBoys);
     }
 
     @GetMapping("/parking-boys-dto")
-    public ResponseEntity<List<Employee>> getAllEmployees(){
-        List<Employee> employees = parkingBoyMapper.selectAllEmployees();
-        System.out.println(employees.toString());
-        return ResponseEntity.ok(employees);
+    public ResponseEntity<List<ParkingBoyDto>> getAllParkingBoyDtos(){
+
+        return ResponseEntity.ok(parkingBoyService.getAllParkingBoyDtos());
     }
 }

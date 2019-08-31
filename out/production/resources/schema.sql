@@ -10,5 +10,4 @@ capacity int not null,
 availablePositionCount int not null,
 employeeID int not null
 );
-ALTER TABLE parking_lot ADD CONSTRAINT FK_parking_boy FOREIGN KEY(employeeID) REFERENCES parking_boy(employeeID);
 
