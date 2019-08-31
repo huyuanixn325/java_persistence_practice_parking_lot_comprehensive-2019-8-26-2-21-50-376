@@ -9,6 +9,8 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.jdbc.JdbcTestUtils;
 import tws.entity.ParkingBoy;
 
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
@@ -32,10 +34,12 @@ public class ParkingBoyMapperTest {
 
     @Test
     public void selectAllParkingBoys() {
-       // jdbcTemplate.execute("  insert  into `parking_boy` (`employeeID`,`parkingBoyName`,`age`) values(2,'lunan',18)");
+       //given
+        jdbcTemplate.execute("  insert  into `parking_boy` (`employeeID`,`parkingBoyName`,`age`) values(2,'lunan',18)");
+       //when
+        List<ParkingBoy> parkingBoyList = parkingBoyMapper.selectAllParkingBoys();
+        //then
+        assertEquals(1,parkingBoyList.size());
     }
 
-    @Test
-    public void selectAllParkingDtos() {
-    }
 }
